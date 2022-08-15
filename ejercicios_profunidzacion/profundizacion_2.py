@@ -33,5 +33,55 @@ Se debe debe imprimir un cartel de error si el operador ingresado no es
 alguno de lo soportados o no es la palabra "FIN".
 '''
 
+from audioop import mul
+
+
 print("Mi Calculadora (^_^)")
 # Empezar aquí la resolución del ejercicio
+
+operadores = ['+', '-', '*', '/', '**', 'FIN']
+
+while True:
+    numero_1 = int(input('Ingrese un número:'))
+    numero_2 = int(input('Ingrese otro número:'))
+    operador = str(input('Ingrese la operación a realizar: [+],[-],[*],[/],[**],[FIN]:'))
+    for i in operadores:
+        if operador == i:
+            if i == '+':
+                suma = numero_1 + numero_2
+                print('{} + {} = {}'.format(numero_1,numero_2,suma))
+            if i == '-':
+                resta = numero_1 - numero_2
+                print('{} - {} = {}'.format(numero_1,numero_2,resta))
+            if i == '*':
+                multiplicacion = numero_1 * numero_2
+                print('{} * {} = {}'.format(numero_1,numero_2,multiplicacion))
+            elif i == '/':
+                division = numero_1 / numero_2
+                print('{} / {} = {}'.format(numero_1,numero_2,division))
+            elif i == '**':
+                potencia = numero_1 ** numero_2
+                print('{} ** {} = {}'.format(numero_1,numero_2,potencia))
+            while True:
+                if i == 'FIN':
+                    break
+
+print('terminamos')
+
+                
+            
+
+
+
+'''numero_1 = int(input('Ingrese un número ó la palabra FIN para terminar:'))
+numero_2 = int(input('Ingrese otro número:'))
+operador = str(input('{+} {-} {*} {/} {**}'))
+
+suma = numero_1 + numero_2
+resta = numero_1 - numero_2
+multiplicacion = numero_1 * numero_2
+division = numero_1 / numero_2
+potencia = numero_1 ** numero_2
+
+
+while numero_1 >= 0 or numero_1 <= 0 and numero_2 >= 0 or numero_2 <= 0: '''

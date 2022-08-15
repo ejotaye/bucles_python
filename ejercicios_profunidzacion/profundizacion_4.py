@@ -51,6 +51,22 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 
 # Colocar el bucle aqui......
 
+for temperatura in temp_dataloger:
+    temperatura_sumatoria += temperatura
+    temperatura_len += 1
+    if (temperatura_max is None) or (temperatura > temperatura_max):
+        temperatura_max = temperatura
+    if (temperatura_min is None) or (temperatura < temperatura_min):
+        temperatura_min = temperatura
+    
+cantidad_temperaturas = temperatura_len
+
+temperatura_promedio = temperatura_sumatoria / cantidad_temperaturas
+
+print('Temperatura máxima:', temperatura_max)
+print('Temperatura mínima:', temperatura_min)
+print('Temperatura promedio:', temperatura_promedio)
+
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
@@ -79,7 +95,17 @@ Referencia:
 https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-durante-todo-el-a%C3%B1o
 '''
 
+if (temperatura_min >= 19) and (temperatura_max <= 28):
+    print('Estamos en verano con una temperatura promedio de:', temperatura_promedio)
+elif (temperatura_min >= 11) and (temperatura_max <= 20):
+    print('Estamos en Otoño con una temperatura promedio de:', temperatura_promedio)
+elif (temperatura_min >= 8) and (temperatura_max <= 14):
+    print('Estamos en Invierno con una temperatura promedio de:', temperatura_promedio)
+elif (temperatura_min >= 10) and (temperatura_max <= 24):
+    print('Estamos en Primavera con una temperatura promedio de', temperatura_promedio)
+
 # En base a los rangos de temperatura de cada estación,
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
-# Debe utilizar temperatura_max y temperatura_min para definirlo
+# Debe utilizar temperatura_max y temperatura_min para definirlo 
+
